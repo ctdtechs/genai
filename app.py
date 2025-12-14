@@ -16,9 +16,9 @@ st.set_page_config(
 
 MODEL_ID = "apac.anthropic.claude-3-5-sonnet-20241022-v2:0"
 
-AWS_REGION = os.getenv("AWS_REGION", "ap-south-1")
-AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_REGION = st.secrets.get("AWS_REGION", "ap-south-1")
+AWS_ACCESS_KEY = st.secrets.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_KEY = st.secrets.get("AWS_SECRET_ACCESS_KEY")
 
 
 def get_bedrock_client():
@@ -217,3 +217,4 @@ if uploaded_file:
                 file_name="transformed_data.json",
                 mime="application/json"
             )
+
