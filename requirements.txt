@@ -1,0 +1,6 @@
+streamlit
+pdfplumber
+Pillow
+boto3
+botocore
+python-dotenv
